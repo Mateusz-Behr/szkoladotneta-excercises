@@ -44,9 +44,8 @@ namespace Variables
 
             Console.WriteLine("Numer pracownika:");
             string emplNumber = Console.ReadLine();
-            
             Int64.TryParse(emplNumber, out Int64 employeeNumber);
-            
+
             Console.WriteLine("--------------------");
             Console.Write($"Wpisane dane: \r\n" +
                 $"Imię: {firstName}\r\n" +
@@ -58,9 +57,8 @@ namespace Variables
                 $"Numer telefonu: {phoneNumber}\r\n" +
                 $"Adres email: {email}\r\n" +
                 $"PESEL: {pesel}\r\n" +
-                $"Nr pracownika: {employeeNumber}\r\n" +
-                "--------------------");
-
+                $"Nr pracownika: {employeeNumber}\r\n");
+            Console.WriteLine("--------------------");
         }
     }
 }
