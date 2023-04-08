@@ -9,11 +9,9 @@ namespace EvenOrOdd
         static void Main(string[] args)
         {
             Console.WriteLine("Program sprawdza czy liczba jest parzysta czy nieparzysta.");
-            Console.WriteLine("Podal liczbę:");
-            string a = Console.ReadLine();
+            Console.WriteLine("Podaj liczbę:");
 
-            float number = float.Parse(a, CultureInfo.InvariantCulture.NumberFormat);
-            //Int32.TryParse(a, out int number);
+            float number = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
 
             if (number != (int)number)
             {

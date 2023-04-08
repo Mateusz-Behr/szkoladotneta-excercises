@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
 
 namespace Calculator
 {
@@ -10,37 +12,39 @@ namespace Calculator
             Console.WriteLine("Kalkulator liczy proste działania na dwóch liczbach.");
 
             Console.WriteLine("Podaj pierwszą liczbę.");
-            float numberA = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+            decimal numberA = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
 
             Console.WriteLine("Podaj drugą liczbę.");
-            float numberB = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+            decimal numberB = decimal.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
 
             Console.WriteLine(@"Podaj numer operacji do wykonania:
         1. Dodawanie
         2. Odejmowanie
         3. Mnożenie
         4. Dzielenie");
-
-            int mathOperation = int.Parse(Console.ReadLine());
-
+            
+            int.TryParse(Console.ReadLine(), out int mathOperation);
             
             switch (mathOperation)
             {
                 case 1:
-                    float addition = numberA + numberB;
-                    Console.WriteLine($"Wynik: {Math.Round(addition, 3)}");       
+                    Console.WriteLine($"Wynik: {numberA + numberB}");
                     break;
                 case 2:
-                    float subtraction = numberA - numberB;
-                    Console.WriteLine($"Wynik: {Math.Round(subtraction, 3)}");
+                    Console.WriteLine($"Wynik: {numberA - numberB}");
                     break;
                 case 3:
-                    float multiplication = numberA * numberB;
-                    Console.WriteLine($"Wynik: {Math.Round(multiplication, 3)}");
+                    Console.WriteLine($"Wynik: {numberA * numberB}");
                     break;
                 case 4:
-                    float division = numberA / numberB;
-                    Console.WriteLine($"Wynik: {Math.Round(division, 3)}");
+                    try
+                    {
+                        Console.WriteLine($"Wynik: {numberA / numberB}");
+                    }
+                    catch (DivideByZeroException)
+                    {
+                        Console.WriteLine("Nie można dzielić przez zero.");
+                    }
                     break;
                 default:
                     Console.WriteLine("Błąd, wybierz operację 1 - 4.");

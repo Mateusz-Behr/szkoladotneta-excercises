@@ -23,15 +23,9 @@ namespace BuildingTriangle
 
             float longestSide = (sideA < sideB ? (sideB < sideC ? sideC : sideB) : (sideA < sideC ? sideC : sideA));
 
-            if (longestSide == sideA && sideB + sideC > longestSide)
-            {
-                Console.WriteLine("Z podanych boków można zbudować trójkąt.");
-            }
-            else if (longestSide == sideB && sideA + sideC > longestSide)
-            {
-                Console.WriteLine("Z podanych boków można zbudować trójkąt.");
-            }
-            else if (longestSide == sideC && sideA + sideB > longestSide)
+            if ((longestSide == sideA && sideB + sideC > longestSide) || 
+                (longestSide == sideB && sideC + sideA > longestSide) || 
+                (longestSide == sideC && sideA + sideB > longestSide))
             {
                 Console.WriteLine("Z podanych boków można zbudować trójkąt.");
             }

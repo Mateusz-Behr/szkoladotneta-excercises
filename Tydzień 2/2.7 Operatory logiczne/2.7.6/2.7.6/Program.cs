@@ -11,9 +11,7 @@ namespace Height
             Console.WriteLine("Podaj swoją wysokość ciała w centymetrach.");
 
             float height = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
-
-            string message;
-
+            
             if (height < 154)
             {
                 Console.WriteLine("Jesteś skrajnie niski.");
