@@ -1,4 +1,3 @@
 Szkoladotneta-excercises
 
-Week 2 - Variables
-Week 2 - Logical Operators
+Week 2 - Variables, Logical Operators, Loops
