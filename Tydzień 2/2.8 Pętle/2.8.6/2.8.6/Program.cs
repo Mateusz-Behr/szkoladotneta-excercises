@@ -13,6 +13,7 @@ namespace StringSum
             {
                 sum += (1 / i);
             }
+
             Console.WriteLine(sum);
         }
     }

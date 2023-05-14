@@ -9,7 +9,7 @@ namespace DecimalToBinary
             Console.WriteLine("Program zamienię liczbę dziesiętną podaną przez użytkownika na liczbę binarną.");
             Console.WriteLine("Podaj liczbę dziesiętną: ");
 
-            int decimalNumber = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int decimalNumber);
             int remainder;
             string binaryNumber = string.Empty;
 

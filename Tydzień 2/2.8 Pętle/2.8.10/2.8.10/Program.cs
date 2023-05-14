@@ -11,10 +11,10 @@ namespace LeastCommonMultiple
 
             Inputting:
             Console.WriteLine("Podaj pierwszą liczbę: ");
-            int inputtedA = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int inputtedA);
 
             Console.WriteLine("Podaj drugą liczbę: ");
-            int inputtedB = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int inputtedB);
 
             if (inputtedA <= 0 || inputtedB <= 0)
             {
@@ -41,11 +41,11 @@ namespace LeastCommonMultiple
                 b = remainder;
                 remainder = a % b;
             }
+
             gCD = b;
             lCM = inputtedA * inputtedB / gCD;
 
             Console.WriteLine($"Najmniejsza wspólna wielokrotoność liczb {inputtedA} i {inputtedB} wynosi {lCM}.");
-
         }
     }
 }

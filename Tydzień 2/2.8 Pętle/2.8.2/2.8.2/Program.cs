@@ -16,10 +16,10 @@ namespace EvenNumbers
                 {
                     Console.WriteLine($"{a}");
                 }
+
                 a++;
             }
             while (a <= 1000);
-            
         }
     }
 }
