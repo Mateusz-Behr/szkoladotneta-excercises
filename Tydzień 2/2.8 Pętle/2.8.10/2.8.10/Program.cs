@@ -6,21 +6,23 @@ namespace LeastCommonMultiple
     {
         static void Main()
         {
-            int a, b, remainder, gCD, lCM; //gCD - Greatest Common Divisor; lCM - Least Common Multiple//
+            int a, b, remainder, gCD, lCM, inputtedA, inputtedB; // gCD - Greatest Common Divisor; lCM - Least Common Multiple //
             Console.WriteLine("Program znajduje najmniejszą wspólną wielokrotność (NWW) dwóch liczb naturalnych.");
 
-            Inputting:
-            Console.WriteLine("Podaj pierwszą liczbę: ");
-            int.TryParse(Console.ReadLine(), out int inputtedA);
-
-            Console.WriteLine("Podaj drugą liczbę: ");
-            int.TryParse(Console.ReadLine(), out int inputtedB);
-
-            if (inputtedA <= 0 || inputtedB <= 0)
+            do
             {
-                Console.WriteLine("Należy podać dwie liczby naturalne.");
-                goto Inputting;
+                Console.WriteLine("Podaj pierwszą liczbę: ");
+                int.TryParse(Console.ReadLine(), out inputtedA);
+
+                Console.WriteLine("Podaj drugą liczbę: ");
+                int.TryParse(Console.ReadLine(), out inputtedB);
+
+                if (inputtedA <= 0 || inputtedB <= 0)
+                {
+                    Console.WriteLine("Należy podać dwie liczby naturalne.");
+                }
             }
+            while (inputtedA <= 0 && inputtedB <= 0 || inputtedA > 0 && inputtedB <= 0 || inputtedA <= 0 && inputtedB > 0);
 
             if (inputtedA >= inputtedB)
             {
